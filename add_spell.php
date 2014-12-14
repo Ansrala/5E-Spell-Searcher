@@ -40,4 +40,4 @@ for($i = 0;$i<count($classes);$i++){
         $conn->query("INSERT INTO classes_spells (class_id,spell_id)VALUES(".$classes[$i][0].",$spell_id)");
     }
 }
-header('Location: /');
+header('Location: index.php');
