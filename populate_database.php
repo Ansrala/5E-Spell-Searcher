@@ -54,9 +54,10 @@ if(isset($_GET["spell_id"])) {
 ?><!DOCTYPE html>
 <html>
     <head>
-
+		<link href="bootstrap-3.3.1-dist/dist/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
+		<script src="bootstrap-3.3.1-dist/dist/js/bootstrap.min.js"></script>
 
     <form action="add_spell.php" method="post">
         <?=$edit?>
