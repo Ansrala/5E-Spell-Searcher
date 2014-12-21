@@ -34,7 +34,7 @@ global $conn;
 			<h1>The spells</h1>
 			<?php
 				for($i = 0; $i<count($spells);$i++)
-				echo "<a href='populate_database.php?spell_id=".$spells[$i][0]."'>".$spells[$i][1]."</a><br>"
+				echo "<li><a href='populate_database.php?spell_id=".$spells[$i][0]."'>".$spells[$i][1]."</a></li>"
 			?>
 		</div>
     </body>
