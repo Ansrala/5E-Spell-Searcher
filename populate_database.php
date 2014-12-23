@@ -84,12 +84,12 @@ if(isset($_GET["spell_id"])) {
 				
 					<?=$edit?>
 					<div class="form-group">
-					<label for="name">Name: </label> <input type="text" name="name" value="<?=$name?>">
+					<label for="name">Name: </label> <input class="form-control" type="text" name="name" value="<?=$name?>">
 					</div><div class="form-group">
-					<label for="level">Spell Level: </label> <input type="number" min="0" max="9" name="level" value="<?=$level?>">
+					<label for="level">Spell Level: </label> <input class="form-control" type="number" min="0" max="9" name="level" value="<?=$level?>">
 					</div><div class="form-group">
 					<label for="school_id">School: </label>
-					<select name="school_id">
+					<select name="school_id" class="form-control">
 						<?php
 							for($i = 0;$i < count($schools); $i++) {
 								echo "<option ".($schools[$i][0] == $school_id ? "selected":"" )." value='" . $schools[$i][0] . "'>" . $schools[$i][1] . "</option>";
@@ -99,19 +99,19 @@ if(isset($_GET["spell_id"])) {
 					</div><div class="form-group">
 						<label for="ritual">Ritual: </label> <input type="checkbox" name="ritual" value="checked" <?=($ritual ? "checked":"")?>>
 					</div><div class="form-group">
-						<label for="casting_time_number">Casting Time Number: </label> <input type="number" min="0" max="100000" name="casting_time_number" value="<?=$casting_time_number?>">
+						<label for="casting_time_number">Casting Time Number: </label> <input class="form-control" type="number" min="0" max="100000" name="casting_time_number" value="<?=$casting_time_number?>">
 					</div><div class="form-group">
-						<label for="casting_time_unit">Casting Time Unit: </label><input type="text" name="casting_time_unit" value="<?=$casting_time_unit?>">
+						<label for="casting_time_unit">Casting Time Unit: </label><input class="form-control" type="text" name="casting_time_unit" value="<?=$casting_time_unit?>">
 					</div><div class="form-group">
-						<label for="range_number">Range Number: </label> <input type="number" min="0" max="100000" name="range_number" value="<?=$range_number?>">
+						<label for="range_number">Range Number: </label> <input class="form-control" type="number" min="0" max="100000" name="range_number" value="<?=$range_number?>">
 					</div><div class="form-group">
-						<label for="range_unit">Range Unit: </label><input type="text" name="range_unit" value="<?=$range_unit?>">
+						<label for="range_unit">Range Unit: </label><input class="form-control" type="text" name="range_unit" value="<?=$range_unit?>">
 					</div><div class="form-group">
 						<label for="concentration">Concentration: </label> <input type="checkbox" name="concentration" value="checked"<?=($concentration ? "checked":"")?>>
 					</div><div class="form-group">
-						<label for="duration_number">Duration Number: </label><input type="number" min="0" max="100000" name="duration_number" value="<?=$duration_number?>">
+						<label for="duration_number">Duration Number: </label><input class="form-control" type="number" min="0" max="100000" name="duration_number" value="<?=$duration_number?>">
 					</div><div class="form-group">
-						<label for="duration_unit">Duration Unit: </label><input type="text" name="duration_unit" value="<?=$duration_unit?>">
+						<label for="duration_unit">Duration Unit: </label><input class="form-control" type="text" name="duration_unit" value="<?=$duration_unit?>">
 					</div><div class="form-group">
 						<label for="vocal">Vocal: </label> <input type="checkbox" name="vocal" value="checked" <?=($vocal ? "checked":"")?>>
 						<label for="somatic">Somatic: </label> <input type="checkbox" name="somatic" value="checked" <?=($somatic ? "checked":"")?>>
