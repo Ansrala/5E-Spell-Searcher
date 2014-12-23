@@ -75,52 +75,75 @@ if(isset($_GET["spell_id"])) {
           </ul>
         </div>
 	</nav>
-    <body>
-		<script src="jquery-2.1.3.min"></script>
-		<script src="bootstrap/dist/js/bootstrap.min.js"></script>
-		<form action="add_spell.php" method="post">
-			<?=$edit?>
-				<label for="name">Name: </label> <input type="text" name="name" value="<?=$name?>"><br>
-				<label for="level">Spell Level: </label> <input type="number" min="0" max="9" name="level" value="<?=$level?>"><br>
-				<label for="school_id">School: </label><select name="school_id"><?php
-					for($i = 0;$i < count($schools); $i++) {
-						echo "<option ".($schools[$i][0] == $school_id ? "selected":"" )." value='" . $schools[$i][0] . "'>" . $schools[$i][1] . "</option>";
-					}
-			?>
-			</select><br>
-			<label for="ritual">Ritual: </label> <input type="checkbox" name="ritual" value="checked" <?=($ritual ? "checked":"")?>><br>
-			<label for="casting_time_number">Casting Time Number: </label> <input type="number" min="0" max="100000" name="casting_time_number" value="<?=$casting_time_number?>"><br>
-			<label for="casting_time_unit">Casting Time Unit: </label><input type="text" name="casting_time_unit" value="<?=$casting_time_unit?>"><br>
-			<label for="range_number">Range Number: </label> <input type="number" min="0" max="100000" name="range_number" value="<?=$range_number?>"><br>
-			<label for="range_unit">Range Unit: </label><input type="text" name="range_unit" value="<?=$range_unit?>"><br>
-			<label for="concentration">Concentration: </label> <input type="checkbox" name="concentration" value="checked"<?=($concentration ? "checked":"")?>><br>
-			<label for="duration_number">Duration Number: </label><input type="number" min="0" max="100000" name="duration_number" value="<?=$duration_number?>"><br>
-			<label for="duration_unit">Duration Unit: </label><input type="text" name="duration_unit" value="<?=$duration_unit?>"><br>
-			<label for="vocal">Vocal: </label> <input type="checkbox" name="vocal" value="checked" <?=($vocal ? "checked":"")?>><br>
-			<label for="somatic">Somatic: </label> <input type="checkbox" name="somatic" value="checked" <?=($somatic ? "checked":"")?>><br>
-			<label for="materials">Materials: (leave blank if none)</label><textarea rows="4" cols="50" name="materials"><?=$materials?></textarea><br>
-			<label for="descriptions">Descriptions</label><textarea rows="4" cols="50" name="descriptions"><?=$description?></textarea><br>
-
-			<?php
-			if(isset($class_spells))
-			{
-				 for($i = 0;$i <count($classes);$i++) {
-					 $temp = false;
-					 for($j=0;$j <count($class_spells);$j++){ 
-						 if($class_spells[$j]['class_id'] == $classes[$i][0])
-							 $temp = true; 
+    <body role="document">
+		<div class="container theme-showcase" role="main">
+			<script src="jquery-2.1.3.min"></script>
+			<script src="bootstrap/dist/js/bootstrap.min.js"></script>
+			
+			<form action="add_spell.php" method="post" class="form-horizontal">
+				
+					<?=$edit?>
+					<div class="form-group">
+					<label for="name">Name: </label> <input type="text" name="name" value="<?=$name?>">
+					</div><div class="form-group">
+					<label for="level">Spell Level: </label> <input type="number" min="0" max="9" name="level" value="<?=$level?>">
+					</div><div class="form-group">
+					<label for="school_id">School: </label>
+					<select name="school_id">
+						<?php
+							for($i = 0;$i < count($schools); $i++) {
+								echo "<option ".($schools[$i][0] == $school_id ? "selected":"" )." value='" . $schools[$i][0] . "'>" . $schools[$i][1] . "</option>";
+							}
+						?>
+					</select>
+					</div><div class="form-group">
+						<label for="ritual">Ritual: </label> <input type="checkbox" name="ritual" value="checked" <?=($ritual ? "checked":"")?>>
+					</div><div class="form-group">
+						<label for="casting_time_number">Casting Time Number: </label> <input type="number" min="0" max="100000" name="casting_time_number" value="<?=$casting_time_number?>">
+					</div><div class="form-group">
+						<label for="casting_time_unit">Casting Time Unit: </label><input type="text" name="casting_time_unit" value="<?=$casting_time_unit?>">
+					</div><div class="form-group">
+						<label for="range_number">Range Number: </label> <input type="number" min="0" max="100000" name="range_number" value="<?=$range_number?>">
+					</div><div class="form-group">
+						<label for="range_unit">Range Unit: </label><input type="text" name="range_unit" value="<?=$range_unit?>">
+					</div><div class="form-group">
+						<label for="concentration">Concentration: </label> <input type="checkbox" name="concentration" value="checked"<?=($concentration ? "checked":"")?>>
+					</div><div class="form-group">
+						<label for="duration_number">Duration Number: </label><input type="number" min="0" max="100000" name="duration_number" value="<?=$duration_number?>">
+					</div><div class="form-group">
+						<label for="duration_unit">Duration Unit: </label><input type="text" name="duration_unit" value="<?=$duration_unit?>">
+					</div><div class="form-group">
+						<label for="vocal">Vocal: </label> <input type="checkbox" name="vocal" value="checked" <?=($vocal ? "checked":"")?>>
+						<label for="somatic">Somatic: </label> <input type="checkbox" name="somatic" value="checked" <?=($somatic ? "checked":"")?>>
+					</div><div class="form-group">
+						<label for="materials">Materials: (leave blank if none)</label><textarea rows="4" cols="50" name="materials"><?=$materials?></textarea>
+					</div><div class="form-group">
+						<label for="descriptions">Descriptions</label><textarea rows="4" cols="50" name="descriptions"><?=$description?></textarea>
+					</div><div class="form-group">
+					<?php
+					if(isset($class_spells))
+					{
+						 for($i = 0;$i <count($classes);$i++) {
+							 $temp = false;
+							 for($j=0;$j <count($class_spells);$j++){ 
+								 if($class_spells[$j]['class_id'] == $classes[$i][0])
+									 $temp = true; 
+							 }
+							 echo "<label for='class_" . $classes[$i][1] . "'>" . $classes[$i][1] . "</label><input type='checkbox' ".($temp ? "checked": "nupe")." name='class_" . $classes[$i][1] . "' value='checked'><br>";
+						 }
 					 }
-					 echo "<label for='class_" . $classes[$i][1] . "'>" . $classes[$i][1] . "</label><input type='checkbox' ".($temp ? "checked": "nupe")." name='class_" . $classes[$i][1] . "' value='checked'><br>";
-				 }
-			 }
-			 else{
-			  for($i = 0;$i <count($classes);$i++)
-			  echo "<label for='class_" . $classes[$i][1] . "'>" . $classes[$i][1] . "</label><input type='checkbox' name='class_" . $classes[$i][1] . "' value='checked'><br>";
-			 }
-			?>
+					 else
+					 {
+						for($i = 0;$i <count($classes);$i++)
+						echo "<label for='class_" . $classes[$i][1] . "'>" . $classes[$i][1] . "</label><input type='checkbox' name='class_" . $classes[$i][1] . "' value='checked'><br>";
+					 }
+					?>
+					</div>
 
-			<input type="submit" name="submit" value="Submit">
-		</form>
-
+					<input type="submit" name="submit" value="Submit">
+				</div>		
+			</form>
+			
+		</div>
     </body>
 </html>
