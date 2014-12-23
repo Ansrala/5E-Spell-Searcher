@@ -28,7 +28,8 @@ global $conn;
         </div>
 	</nav>
     <body role="document">
-		<div class="container theme-showcase" role="main"> 
+		<div class="container theme-showcase" role="main">
+			<script src="jquery-2.1.3.min"></script>
 			<script src="bootstrap/dist/js/bootstrap.min.js"></script>
 			
 			<h1>The spells</h1>

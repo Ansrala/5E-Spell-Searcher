@@ -57,6 +57,7 @@ if(isset($_GET["spell_id"])) {
 		<link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
+	<script src="jquery-2.1.3.min"></script>
 		<script src="bootstrap/dist/js/bootstrap.min.js"></script>
 
     <form action="add_spell.php" method="post">
@@ -93,6 +94,10 @@ if(isset($_GET["spell_id"])) {
 				 }
 				 echo "<label for='class_" . $classes[$i][1] . "'>" . $classes[$i][1] . "</label><input type='checkbox' ".($temp ? "checked": "nupe")." name='class_" . $classes[$i][1] . "' value='checked'><br>";
 			 }
+		 }
+		 else{
+		  for($i = 0;$i <count($classes);$i++)
+		  echo "<label for='class_" . $classes[$i][1] . "'>" . $classes[$i][1] . "</label><input type='checkbox' name='class_" . $classes[$i][1] . "' value='checked'><br>";
 		 }
         ?>
 
