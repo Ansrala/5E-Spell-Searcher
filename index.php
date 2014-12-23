@@ -6,8 +6,8 @@ global $conn;
 ?><!DOCTYPE html>
 <html>
     <head>
-	<link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-	<link href="theme.css" rel="stylesheet">
+		<link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="theme.css" rel="stylesheet">
     </head>
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="navbar-header">
