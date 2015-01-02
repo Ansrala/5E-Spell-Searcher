@@ -151,7 +151,7 @@ if(isset($_GET["spell_id"])) {
 						 else
 						 {
 							for($i = 0;$i <count($classes);$i++)
-							echo "<label class=\"btn btn-primary\"><input name='class_". $classes[$i][1] ."\" type=\"checkbox\" value=\"checked\" >"  . $classes[$i][1] . "</label>";
+							echo "<label class='btn btn-primary'><input name='class_". $classes[$i][1] ."' type='checkbox' value='checked' >"  . $classes[$i][1] . "</label>";
 						 }
 						?>
 					</div>
