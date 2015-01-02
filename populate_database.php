@@ -77,7 +77,7 @@ if(isset($_GET["spell_id"])) {
 	</nav>
     <body role="document">
 		<div class="container theme-showcase" role="main">
-			<script src="jquery-2.1.3.min"></script>
+			<script src="jquery-2.1.3.min.js"></script>
 			<script src="bootstrap/dist/js/bootstrap.min.js"></script>
 			
 			<form action="add_spell.php" method="post" class="form-horizontal">
@@ -143,13 +143,13 @@ if(isset($_GET["spell_id"])) {
 									 if($class_spells[$j]['class_id'] == $classes[$i][0])
 										 $temp = true; 
 								 }
-								 echo "<label class=\"btn btn-primary\"><input type=\"checkbox\" class=\"btn btn-primary\">" . $classes[$i][1] . "</label>";
+								 echo "<label class=\"btn btn-primary\"><input type=\"checkbox\" ".($temp ? "checked" : "")." >" . $classes[$i][1] . "</label>";
 							 }
 						 }
 						 else
 						 {
 							for($i = 0;$i <count($classes);$i++)
-							echo "<label class=\"btn btn-primary\"><input type=\"checkbox\" class=\"btn btn-primary\">"  . $classes[$i][1] . "</label>";
+							echo "<label class=\"btn btn-primary\"><input type=\"checkbox\" >"  . $classes[$i][1] . "</label>";
 						 }
 						?>
 					</div>
