@@ -96,48 +96,62 @@ if(isset($_GET["spell_id"])) {
 							}
 						?>
 					</select>
-					</div><div class="form-group">
+					</div>
+					<div class="form-group">
 						<label for="ritual">Ritual: </label> <input type="checkbox" name="ritual" value="checked" <?=($ritual ? "checked":"")?>>
-					</div><div class="form-group">
-						<label for="casting_time_number">Casting Time Number: </label> <input class="form-control" type="number" min="0" max="100000" name="casting_time_number" value="<?=$casting_time_number?>">
-					</div><div class="form-group">
-						<label for="casting_time_unit">Casting Time Unit: </label><input class="form-control" type="text" name="casting_time_unit" value="<?=$casting_time_unit?>">
-					</div><div class="form-group">
-						<label for="range_number">Range Number: </label> <input class="form-control" type="number" min="0" max="100000" name="range_number" value="<?=$range_number?>">
-					</div><div class="form-group">
-						<label for="range_unit">Range Unit: </label><input class="form-control" type="text" name="range_unit" value="<?=$range_unit?>">
-					</div><div class="form-group">
+					</div>
+					<div class="form-group">
 						<label for="concentration">Concentration: </label> <input type="checkbox" name="concentration" value="checked"<?=($concentration ? "checked":"")?>>
-					</div><div class="form-group">
+					</div>
+					<div class="form-group">
+						<label for="casting_time_number">Casting Time Number: </label> <input class="form-control" type="number" min="0" max="100000" name="casting_time_number" value="<?=$casting_time_number?>">
+					</div>
+					<div class="form-group">
+						<label for="casting_time_unit">Casting Time Unit: </label><input class="form-control" type="text" name="casting_time_unit" value="<?=$casting_time_unit?>">
+					</div>
+					<div class="form-group">
+						<label for="range_number">Range Number: </label> <input class="form-control" type="number" min="0" max="100000" name="range_number" value="<?=$range_number?>">
+					</div>
+					<div class="form-group">
+						<label for="range_unit">Range Unit: </label><input class="form-control" type="text" name="range_unit" value="<?=$range_unit?>">
+					</div>
+					<div class="form-group">
 						<label for="duration_number">Duration Number: </label><input class="form-control" type="number" min="0" max="100000" name="duration_number" value="<?=$duration_number?>">
-					</div><div class="form-group">
+					</div>
+					<div class="form-group">
 						<label for="duration_unit">Duration Unit: </label><input class="form-control" type="text" name="duration_unit" value="<?=$duration_unit?>">
-					</div><div class="form-group">
+					</div>
+					<div class="form-group">
 						<label for="vocal">Vocal: </label> <input type="checkbox" name="vocal" value="checked" <?=($vocal ? "checked":"")?>>
 						<label for="somatic">Somatic: </label> <input type="checkbox" name="somatic" value="checked" <?=($somatic ? "checked":"")?>>
-					</div><div class="form-group">
-						<label for="materials">Materials: (leave blank if none)</label><textarea rows="4" cols="50" name="materials"><?=$materials?></textarea>
-					</div><div class="form-group">
-						<label for="descriptions">Descriptions</label><textarea rows="4" cols="50" name="descriptions"><?=$description?></textarea>
-					</div><div class="form-group">
-					<?php
-					if(isset($class_spells))
-					{
-						 for($i = 0;$i <count($classes);$i++) {
-							 $temp = false;
-							 for($j=0;$j <count($class_spells);$j++){ 
-								 if($class_spells[$j]['class_id'] == $classes[$i][0])
-									 $temp = true; 
+					</div>
+					<div class="form-group">
+						<label for="materials">Materials: (leave blank if none)</label>
+						<textarea class="form-control" rows="4" cols="50" name="materials"><?=$materials?></textarea>
+					</div>
+					<div class="form-group">
+						<label for="descriptions">Descriptions</label>
+						<textarea class="form-control" rows="4" cols="50" name="descriptions"><?=$description?></textarea>
+					</div>
+					<div class="btn-group" data-toggle="buttons">
+						<?php
+						if(isset($class_spells))
+						{
+							 for($i = 0;$i <count($classes);$i++) {
+								 $temp = false;
+								 for($j=0;$j <count($class_spells);$j++){ 
+									 if($class_spells[$j]['class_id'] == $classes[$i][0])
+										 $temp = true; 
+								 }
+								 echo "<label class=\"btn btn-primary\"><input type=\"checkbox\" class=\"btn btn-primary\">" . $classes[$i][1] . "</label>";
 							 }
-							 echo "<label for='class_" . $classes[$i][1] . "'>" . $classes[$i][1] . "</label><input type='checkbox' ".($temp ? "checked": "nupe")." name='class_" . $classes[$i][1] . "' value='checked'><br>";
 						 }
-					 }
-					 else
-					 {
-						for($i = 0;$i <count($classes);$i++)
-						echo "<label for='class_" . $classes[$i][1] . "'>" . $classes[$i][1] . "</label><input type='checkbox' name='class_" . $classes[$i][1] . "' value='checked'><br>";
-					 }
-					?>
+						 else
+						 {
+							for($i = 0;$i <count($classes);$i++)
+							echo "<label class=\"btn btn-primary\"><input type=\"checkbox\" class=\"btn btn-primary\">"  . $classes[$i][1] . "</label>";
+						 }
+						?>
 					</div>
 
 					<input type="submit" name="submit" value="Submit">
