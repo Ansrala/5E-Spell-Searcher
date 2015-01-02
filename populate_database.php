@@ -143,13 +143,15 @@ if(isset($_GET["spell_id"])) {
 									 if($class_spells[$j]['class_id'] == $classes[$i][0])
 										 $temp = true; 
 								 }
-								 echo "<label class=\"btn btn-primary\"><input type=\"checkbox\" ".($temp ? "checked" : "")." >" . $classes[$i][1] . "</label>";
+								 echo "<label class=\"btn btn-primary".($temp ? " active" : "")."\">" ;
+								 echo "\t<input name='class_". $classes[$i][1] . "' type=\"checkbox\" " . ($temp ? "checked" : "") . " value=\"checked\">" . $classes[$i][1] ;
+								 echo "</label>";
 							 }
 						 }
 						 else
 						 {
 							for($i = 0;$i <count($classes);$i++)
-							echo "<label class=\"btn btn-primary\"><input type=\"checkbox\" >"  . $classes[$i][1] . "</label>";
+							echo "<label class=\"btn btn-primary\"><input name='class_". $classes[$i][1] ."\" type=\"checkbox\" value=\"checked\" >"  . $classes[$i][1] . "</label>";
 						 }
 						?>
 					</div>
