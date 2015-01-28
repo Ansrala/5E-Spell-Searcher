@@ -47,7 +47,7 @@ if(isset($_GET["spell_id"])) {
     $description = $spell['description'];
 
     $results = $conn->query("SELECT * FROM classes_spells WHERE spell_id = $spell_id ORDER BY id");
-     $class_spells = $results->fetch_all(MYSQLI_ASSOC);
+    $class_spells = $results->fetch_all(MYSQLI_ASSOC);
 
     $edit ="<input type='hidden' name='edit' value='$spell_id'>";
 }
@@ -82,14 +82,17 @@ if(isset($_GET["spell_id"])) {
         <label for="descriptions">Descriptions</label><textarea rows="4" cols="50" name="descriptions"><?=$description?></textarea><br>
 
         <?php
-         for($i = 0;$i <count($classes);$i++) {
-             $temp = false;
-             for($j=0;$j <count($class_spells);$j++){ 
-                 if($class_spells[$j]['class_id'] == $classes[$i][0])
-                     $temp = true; 
-             }
-             echo "<label for='class_" . $classes[$i][1] . "'>" . $classes[$i][1] . "</label><input type='checkbox' ".($temp ? "checked": "nupe")." name='class_" . $classes[$i][1] . "' value='checked'><br>";
-         }
+		if(isset($class_spells))
+		{
+			 for($i = 0;$i <count($classes);$i++) {
+				 $temp = false;
+				 for($j=0;$j <count($class_spells);$j++){ 
+					 if($class_spells[$j]['class_id'] == $classes[$i][0])
+						 $temp = true; 
+				 }
+				 echo "<label for='class_" . $classes[$i][1] . "'>" . $classes[$i][1] . "</label><input type='checkbox' ".($temp ? "checked": "nupe")." name='class_" . $classes[$i][1] . "' value='checked'><br>";
+			 }
+		 }
         ?>
 
         <input type="submit" name="submit" value="Submit">
