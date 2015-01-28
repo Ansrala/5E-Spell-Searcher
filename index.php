@@ -6,8 +6,8 @@ global $conn;
 ?><!DOCTYPE html>
 <html>
     <head>
-		<link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-		<link href="theme.css" rel="stylesheet">
+	<link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="theme.css" rel="stylesheet">
     </head>
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="navbar-header">
@@ -29,7 +29,7 @@ global $conn;
 	</nav>
     <body role="document">
 		<div class="container theme-showcase" role="main">
-			<script src="jquery-2.1.3.min.js"></script>
+			<script src="jquery-2.1.3.min"></script>
 			<script src="bootstrap/dist/js/bootstrap.min.js"></script>
 			
 			<h1>The spells</h1>

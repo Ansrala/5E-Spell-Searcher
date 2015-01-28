@@ -22,9 +22,9 @@ $materials = htmlentities($conn->real_escape_string($_POST["materials"]),ENT_QUO
 $description = htmlentities($conn->real_escape_string($_POST["descriptions"]),ENT_QUOTES);
 
 if(isset($_POST['edit'])){
-  $edit =  htmlentities($conn->real_escape_string($_POST['edit']),ENT_QUOTES);
-$conn->query("DELETE FROM spells WHERE id = $edit");
-    $conn->query("DELETE FROM classes_spells WHERE spell_id = $edit");
+	$edit =  htmlentities($conn->real_escape_string($_POST['edit']),ENT_QUOTES);
+	$conn->query("DELETE FROM spells WHERE id = $edit");
+	$conn->query("DELETE FROM classes_spells WHERE spell_id = $edit");
 }
 
 $conn->query("INSERT INTO spells (name,level,school_id,ritual,casting_time_num,casting_time_unit,range_num,range_unit,duration_concentration,duration_num,duration_unit,vocal,somatic,materials,description)
@@ -32,12 +32,11 @@ VALUES('$name',$level,$school_id,$ritual,$casting_time_num,'$casting_time_unit',
     echo $conn->error;
 $spell_id = $conn->insert_id;
 $classes = $conn->query("SELECT * FROM classes ORDER BY id");
-$classes = $classes->fetch_all(MYSQLI_NUM);
-
-for($i = 0;$i<count($classes);$i++){
+$classes = $classes->fetch_all(MYSQLI_NUM); 
+for($i = 0;$i<count($classes);$i++){ 
     $class = htmlentities($conn->real_escape_string($_POST["class_".$classes[$i][1]]),ENT_QUOTES);
     if($class =="checked"){
-        $conn->query("INSERT INTO classes_spells (class_id,spell_id)VALUES(".$classes[$i][0].",$spell_id)");
+       $conn->query("INSERT INTO classes_spells (class_id,spell_id)VALUES(".$classes[$i][0].",$spell_id)");
     }
 }
 header('Location: index.php');

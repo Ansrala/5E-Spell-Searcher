@@ -101,9 +101,6 @@ if(isset($_GET["spell_id"])) {
 						<label for="ritual">Ritual: </label> <input type="checkbox" name="ritual" value="checked" <?=($ritual ? "checked":"")?>>
 					</div>
 					<div class="form-group">
-						<label for="concentration">Concentration: </label> <input type="checkbox" name="concentration" value="checked"<?=($concentration ? "checked":"")?>>
-					</div>
-					<div class="form-group">
 						<label for="casting_time_number">Casting Time Number: </label> <input class="form-control" type="number" min="0" max="100000" name="casting_time_number" value="<?=$casting_time_number?>">
 					</div>
 					<div class="form-group">
@@ -114,6 +111,9 @@ if(isset($_GET["spell_id"])) {
 					</div>
 					<div class="form-group">
 						<label for="range_unit">Range Unit: </label><input class="form-control" type="text" name="range_unit" value="<?=$range_unit?>">
+					</div>
+					<div class="form-group">
+						<label for="concentration">Concentration: </label> <input type="checkbox" name="concentration" value="checked"<?=($concentration ? "checked":"")?>>
 					</div>
 					<div class="form-group">
 						<label for="duration_number">Duration Number: </label><input class="form-control" type="number" min="0" max="100000" name="duration_number" value="<?=$duration_number?>">
