@@ -1,8 +1,8 @@
 <?php
-$servername = "db554888958.db.1and1.com";
-$username = "dbo554888958";
-$password = "3.1415isGood";
-$database_name = "db554888958";
+$servername = "x";
+$username = "y";
+$password = "z";
+$database_name = "db";
 $database_port = 3306;
 // Create connection
 $conn = new mysqli($servername, $username, $password,$database_name,$database_port);
