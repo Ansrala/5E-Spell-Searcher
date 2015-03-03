@@ -11,5 +11,7 @@ You will need to make sure the connection details are correct in connect_databas
 Spell-Searcher requires Bootstrap to run.  Just Extract the file from http://getbootstrap.com/getting-started/ , (the one that is pre-compiled), and name the extracted folder bootstrap,
 you will be good to go.
 
+If you are reading this, Spell-Searcher requires AngularJS to run as well. It is already included.  Please go to https://angularjs.org/ for downloads, licensing, etc.  
+
 You will need to manually create the Database and user on your database, if you don't want to change values you are free to use the setup script in the dev folder.
 Once that is done, just direct a browser to create_database.php.
